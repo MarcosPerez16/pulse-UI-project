@@ -4,6 +4,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+/* General */
+
+html,
+body {
   background-color: #eafaf0;
 }
 
@@ -107,10 +113,9 @@
 }
 
 .price-card {
-  flex: 1; /* Each card takes equal width */
-  min-width: 300px;
-  max-width: 400px; /* Prevents cards from getting too wide */
-  min-height: 450px; /* Base minimum height */
+  width: 100%; /* default: fills available space */
+  max-width: 400px; /* never get wider than this */
+  flex: 1 1 350px; /* flex-grow, flex-shrink, flex-basis */
 
   background-color: white;
   border-radius: 8px;
@@ -123,6 +128,7 @@
   flex-direction: column;
   padding: 32px;
   gap: 24px;
+  background-color: #eafaf0;
 }
 
 .basic__title {
@@ -226,6 +232,9 @@
 .plus__list {
   list-style: none; /* remove default bullets */
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .plus__list-item {
@@ -245,7 +254,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 2rem;
+
   gap: 1rem;
   border: 1px solid #d6dbdd;
 }
@@ -297,7 +306,11 @@
 
 .premium__list {
   list-style: none; /* remove default bullets */
-  padding-left: 0;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .premium__list-item {
@@ -309,4 +322,44 @@
 .premium__list-item i {
   color: #00ad6a;
   margin-top: 4px; /* vertically align checkmarks with content */
+}
+
+/* MARKETING SECTION */
+
+/* Outer container: sets the section width, max-width, and centers it */
+.marketing__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Inner wrapper: arranges content (via flexbox or grid) */
+.marketing__container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 39.5px;
+  padding: 40px 24px;
+  gap: 24px;
+}
+
+.marketing__img {
+}
+
+.marketing__text {
+  font-size: 24px;
+  text-align: center;
+}
+
+.marketing__text span {
+  display: block;
+  line-height: 1.4;
+}
+
+.marketing__subtitle {
+  font-size: 12px;
+  color: #00ad6a;
+  font-weight: 800;
 }
