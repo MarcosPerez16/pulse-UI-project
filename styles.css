@@ -109,7 +109,7 @@
 .price-card {
   flex: 1; /* Each card takes equal width */
   min-width: 300px;
-  max-width: 350px; /* Prevents cards from getting too wide */
+  max-width: 400px; /* Prevents cards from getting too wide */
   min-height: 450px; /* Base minimum height */
 
   background-color: white;
@@ -125,11 +125,22 @@
   gap: 24px;
 }
 
+.basic__title {
+  color: #16a369;
+}
+
+.basic__list {
+}
+
 .basic__list,
 .basic__text,
-.plus__list {
-  line-height: 1.5;
+.plus__list,
+.premium__text,
+.premium__list {
+  line-height: 1.375; /* leading-snug */
 }
+
+/* plus card */
 
 .price-card__plus {
   border: 1px solid #448a6e;
@@ -168,6 +179,7 @@
   font-size: 50px;
   font-weight: 800;
   display: block;
+  color: #00ad6b;
 }
 
 .plus__top-content {
@@ -176,8 +188,13 @@
   gap: 8px;
 }
 
-.plus-price__text {
+.plus__price-text {
   font-size: 30px;
+  color: #83858a;
+}
+
+.plus__text {
+  font-size: 12px;
 }
 
 .plus__button-wrapper {
@@ -199,6 +216,7 @@
   cursor: pointer;
   font-weight: 600;
   background-color: #1fe375;
+  margin-bottom: 1rem;
 }
 
 .plus__button:hover {
@@ -221,5 +239,74 @@
   margin-top: 4px; /* vertically align checkmarks with content */
 }
 
+/* premium card */
+
 .price-card__premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2rem;
+  gap: 1rem;
+  border: 1px solid #d6dbdd;
+}
+
+.premium__text-wrapper {
+  background-color: #f2f4f3;
+  padding: 1rem; /* equal to p-4 */
+  text-align: center;
+
+  border-bottom: 1px solid #d6dbdd;
+}
+
+.premium__title {
+  display: block;
+  font-size: 36px;
+  font-weight: 500;
+  color: #00ad6a;
+  text-align: center;
+}
+
+.premium__title span {
+  display: block;
+}
+
+.premium__price-text {
+  font-size: 30px;
+  color: #83858a;
+}
+
+.premium__text {
+  font-size: 12px;
+}
+
+.premium__button {
+  font-size: 1.25rem;
+  padding: 0.5rem 1.25rem; /* space inside the button */
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #1fe375;
+  margin-bottom: 1rem;
+}
+
+.premium__button:hover {
+  transform: scale(1.08);
+}
+
+.premium__list {
+  list-style: none; /* remove default bullets */
+  padding-left: 0;
+}
+
+.premium__list-item {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+
+.premium__list-item i {
+  color: #00ad6a;
+  margin-top: 4px; /* vertically align checkmarks with content */
 }
