@@ -363,3 +363,62 @@ body {
   color: #00ad6a;
   font-weight: 800;
 }
+
+/* FAQ  */
+
+.faq {
+  background-color: #fcfcfc; /* this gives full width white */
+}
+
+.faq__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faq__title {
+  font-size: 48px;
+  font-weight: 700;
+  padding-left: 0.8rem;
+  padding-top: 4rem;
+}
+
+.faq__text-container {
+  padding: 1.5rem 1rem;
+  min-height: 150px; /* or whatever height works visually */
+}
+
+.faq__text-title {
+  font-size: 20px;
+  color: #080c16;
+  margin-bottom: 0.75rem; /* or 1rem if you want more space */
+}
+
+.faq__text-content {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.faq__text-content span {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.faq__column {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* this selects the 2nd column and last child to move it downwards.
+there has to be a better aproach to pull down the last child
+*/
+.faq__column:last-child .faq__text-container:last-child {
+  margin-top: 4.6rem; /* adjust spacing as needed */
+}
