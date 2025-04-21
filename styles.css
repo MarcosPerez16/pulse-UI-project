@@ -534,4 +534,117 @@ keeps it clean
   padding-bottom: 0.5rem;
 }
 
+/* HAMBURGER MENU */
+
+/* Hides hamburger icon by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  background-color: #00ad6a;
+  border-radius: 2px;
+  width: 100%;
+}
+
 /* MEDIA QUERIES */
+
+@media (max-width: 1097px) {
+  .main__wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .price-card {
+    width: 90%;
+    max-width: 560px;
+  }
+
+  .main__container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 734px) {
+  .nav__header-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .main__wrapper {
+    margin: 0;
+  }
+
+  .price-card__plus {
+    min-height: auto;
+  }
+
+  .faq__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .faq__title {
+    padding-left: 1.2rem;
+  }
+
+  .faq__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq__text-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .faq__column:last-child .faq__text-container:last-child {
+    margin-top: 0;
+  }
+
+  .footer__top {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .footer__top-img {
+    align-self: center;
+  }
+
+  .footer__top-logobtn-container {
+    width: 100%;
+  }
+
+  .footer__top-btn {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .footer__bottom-inner {
+    padding: 2rem 2rem;
+  }
+}
+
+/* could add last break point somewhere between
+ 390 and 715 
+*/
