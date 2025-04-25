@@ -381,8 +381,10 @@ body {
 
 /* FAQ  */
 
+/* FAQ */
+
 .faq {
-  background-color: #fcfcfc; /* this gives full width white */
+  background-color: #fcfcfc;
   padding-bottom: 100px;
 }
 
@@ -392,10 +394,8 @@ body {
   margin: 0 auto;
 }
 
-.faq__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.faq__title-wrapper {
+  padding: 0 1.5rem;
 }
 
 .faq__title {
@@ -405,15 +405,26 @@ body {
   padding-top: 4rem;
 }
 
+.faq__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
 .faq__text-container {
-  padding: 1.5rem 1rem;
-  min-height: 150px; /* or whatever height works visually */
+  flex: 1 1 500px;
+  padding: 1.5rem;
+  min-height: 150px;
+  box-sizing: border-box;
+  background-color: white;
 }
 
 .faq__text-title {
   font-size: 20px;
   color: #080c16;
-  margin-bottom: 0.75rem; /* or 1rem if you want more space */
+  margin-bottom: 0.75rem;
 }
 
 .faq__text-content {
@@ -424,19 +435,6 @@ body {
 .faq__text-content span {
   display: block;
   margin-bottom: 1rem;
-}
-
-.faq__column {
-  flex: 1 1 500px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* this selects the 2nd column and last child to move it downwards.
-there has to be a better aproach to pull down the last child
-*/
-.faq__column:last-child .faq__text-container:last-child {
-  margin-top: 4.6rem; /* adjust spacing as needed */
 }
 
 /* FOOTER TOP */
@@ -533,7 +531,7 @@ keeps it clean
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .footer__copyright {
@@ -560,22 +558,202 @@ keeps it clean
   width: 100%;
 }
 
+/* HIDE MOBILE VERSIONS BY DEFAULT */
+.price-card-mobile {
+  display: none;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 1097px) {
-  .main__wrapper {
+  /* hides existing cards for query */
+  .price-card {
+    display: none;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 2rem;
+  }
+
+  .hero__title {
+    text-align: left;
+  }
+
+  /* for ALL cards on mobile  */
+  .price-card-mobile {
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+
+  /* BASIC card mobile */
+  .price-card-mobile__basic {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .basic__list-mobile {
+    line-height: 1.5;
+    margin-left: 1rem;
+  }
+
+  .basic__card-title-mobile {
+    color: #16a369;
+  }
+
+  /* PLUS card mobile */
+
+  .price-card-mobile__plus {
+    background-color: white;
+    padding: 1.5rem;
+    display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
   }
 
-  .price-card {
-    width: 90%;
-    max-width: 560px;
+  .plus__badge-mobile {
+    background-color: #00ad6a;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    letter-spacing: 1px;
   }
 
-  .main__container {
+  .plus__banner-wrapper-mobile {
+    margin: -1.5rem -1.5rem 0 -1.5rem; /* cancels out the card's padding */
+  }
+
+  .plus__title-mobile {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #00ad6a;
+    line-height: 1.2;
+  }
+
+  .plus__price-mobile {
+    font-size: 1.2rem;
+    color: #83858a;
+  }
+
+  .plus__subheading-mobile {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: bold;
+  }
+
+  .plus__list-mobile {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .plus__btn-mobile {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1fe374;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .plus__btn-mobile:hover {
+    background-color: #00ad6a;
+    color: white;
+  }
+
+  /* PREMIUM CARD MOBILE */
+
+  .price-card-mobile__premium {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 1.5rem 2rem 1.5rem; /* top is now 0 */
+    background-color: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .premium__text-wrapper-mobile {
+    width: 100%;
+    background-color: #f2f4f3;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: calc(100% + 3rem); /* adds back both left & right padding */
+    margin-left: -1.5rem;
+  }
+
+  .premium__text-mobile {
+    font-size: 16px;
+    color: #080c16;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .premium__title-mobile {
+    font-size: 24px;
+    font-weight: 600;
+    color: #00ad6a;
+  }
+
+  .premium__price-mobile {
+    font-size: 20px;
+    color: #83858a;
+    font-weight: 500;
+  }
+
+  .premium__subheading-mobile {
+    font-size: 12px;
+    font-weight: bold;
+    color: #080c16;
+    margin-top: 0.5rem;
+  }
+
+  .premium__list-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
     padding: 0;
+    line-height: 1.5;
+  }
+
+  .premium__list-item i {
+    color: #00ad6a;
+    margin-right: 0.5rem;
+  }
+
+  .premium__btn-mobile {
+    background-color: #1fe375;
+    border: none;
+    padding: 0.75rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .premium__btn-mobile:hover {
+    background-color: #00ad6a;
+    color: white;
   }
 }
 
@@ -692,5 +870,3 @@ keeps it clean
     padding: 2rem 2rem;
   }
 }
-
-/* check milestone document for what to work on */
