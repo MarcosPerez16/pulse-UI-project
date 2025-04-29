@@ -806,6 +806,13 @@ keeps it clean
   .hamburger {
     display: flex;
   }
+  .hero__wrapper {
+    margin-top: 3rem;
+  }
+
+  .hero__title {
+    text-align: center;
+  }
 }
 
 @media (max-width: 375px) {
@@ -813,6 +820,7 @@ keeps it clean
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 3rem;
   }
 
   .main__wrapper {
